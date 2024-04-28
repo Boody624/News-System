@@ -1,8 +1,8 @@
 #include "loginwindow.h"
 #include "ui_loginwindow.h"
-#include <QString>
 #include "data.h"
 #include "registration.h"
+#include "adminview.h"
 using namespace std;
 loginWindow::loginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -31,6 +31,12 @@ void loginWindow::on_login_button_clicked()
     if(i->second.first == ui->password_lineedit->text()){
         if (i->second.second==true){
             //Go to admin
+            adminView *V = new adminView(this);
+            this->hide();
+            qDebug()<<"admin";
+            V->show();
+
+
         }
         else{
             //Go to user

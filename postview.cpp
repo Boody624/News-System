@@ -4,12 +4,15 @@
 #include "post.h"
 
 
+
 PostView::PostView(Post *inP,QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::PostView)
 {
     p = inP;
     ui->setupUi(this);
+    ui->dateEdit->setDate(QDate::currentDate());
+    ui->dateEdit->setCalendarPopup(true); // Enable calendar popup
 
 }
 
@@ -25,6 +28,7 @@ void PostView::on_pushButton_clicked()
     int rating = ui->comboBox->currentText().toInt();
     QString Category = ui->comboBox_2->currentText();
     QDate Date = ui->dateEdit->date();
+
     p->setInfo(title,Description,Date,rating,Category);
     emit postPublished(p);
     this->hide();

@@ -2,7 +2,7 @@
 #define POSTVIEW_H
 
 #include <QDialog>
-#include "post.h"
+class Post;
 
 namespace Ui {
 class PostView;
