@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     adminview.cpp \
     data.cpp \
+    editpost.cpp \
     main.cpp \
     loginwindow.cpp \
     post.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     adminview.h \
     data.h \
+    editpost.h \
     loginwindow.h \
     post.h \
     postview.h \
@@ -29,6 +31,7 @@ HEADERS += \
 
 FORMS += \
     adminview.ui \
+    editpost.ui \
     loginwindow.ui \
     postview.ui \
     registration.ui \

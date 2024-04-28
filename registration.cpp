@@ -31,6 +31,7 @@ void registration::on_pushButton_clicked()
         usernames.insert({ui->username_lineedit->text(), std::pair<QString, bool>(ui->password_lineedit->text(), ui->admin_button->isChecked())});
         if (ui->admin_button->isChecked()){
             adminView *V = new adminView(this);
+            V->isAdmin = true;
             this->hide();
             V->show();
         }
@@ -44,4 +45,7 @@ void registration::on_pushButton_clicked()
     }
 
 }
+
+
+
 

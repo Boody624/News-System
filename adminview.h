@@ -1,8 +1,9 @@
 #ifndef ADMINVIEW_H
 #define ADMINVIEW_H
-
+#include <QLabel>
 #include <QDialog>
-#include "post.h"
+#include <QDebug>
+class Post;
 
 namespace Ui {
 class adminView;
@@ -15,14 +16,14 @@ class adminView : public QDialog
 public:
     explicit adminView(QWidget *parent = nullptr);
     ~adminView();
-
+    bool isAdmin = false;
 private:
     Ui::adminView *ui;
 
 public slots:
     void addPost(Post *p);
     void on_pushButton_clicked();
-
+    //void updatePost(QString title, QString description);
 };
 
 #endif // ADMINVIEW_H
