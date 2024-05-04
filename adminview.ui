@@ -60,19 +60,6 @@
     <string>Post</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>470</y>
-     <width>100</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Exit and Save</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>

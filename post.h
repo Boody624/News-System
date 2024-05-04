@@ -33,6 +33,7 @@ public:
     Post();
     ~Post();
     void setInfo(QString t, QString d, QDate indate, int r, QString categ);
+    QString getcateg();
 
 public slots:
     void deletePost();

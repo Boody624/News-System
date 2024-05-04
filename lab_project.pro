@@ -12,6 +12,7 @@ SOURCES += \
     adminview.cpp \
     data.cpp \
     editpost.cpp \
+    editrating.cpp \
     main.cpp \
     loginwindow.cpp \
     post.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     adminview.h \
     data.h \
     editpost.h \
+    editrating.h \
     loginwindow.h \
     post.h \
     postview.h \
@@ -32,6 +34,7 @@ HEADERS += \
 FORMS += \
     adminview.ui \
     editpost.ui \
+    editrating.ui \
     loginwindow.ui \
     postview.ui \
     registration.ui \

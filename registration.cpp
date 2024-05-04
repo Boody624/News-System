@@ -2,6 +2,7 @@
 #include "ui_registration.h"
 #include "data.h"
 #include "adminview.h"
+#include "user.h"
 
 registration::registration(QWidget *parent)
     : QDialog(parent)
@@ -36,7 +37,9 @@ void registration::on_pushButton_clicked()
             V->show();
         }
         else{
-            //Go to user
+            user* us = new user();
+            this->hide();
+            us->show();
         }
     }
     else{
