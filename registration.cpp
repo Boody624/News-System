@@ -2,7 +2,6 @@
 #include "ui_registration.h"
 #include "data.h"
 #include "adminview.h"
-#include "user.h"
 
 registration::registration(QWidget *parent)
     : QDialog(parent)
@@ -29,7 +28,9 @@ void registration::on_pushButton_clicked()
         return;
     }
     if(i==usernames.end()){
-        usernames.insert({ui->username_lineedit->text(), std::pair<QString, bool>(ui->password_lineedit->text(), ui->admin_button->isChecked())});
+        interests inter(ui->politics->isChecked(), ui->business->isChecked(), ui->technology->isChecked(),
+                        ui->healthcare->isChecked(), ui->science->isChecked(), ui->entertainment->isChecked(), ui->sports->isChecked());
+        usernames.insert({ui->username_lineedit->text(), std::tuple<QString, bool, interests>(ui->password_lineedit->text(), ui->admin_button->isChecked(), inter)});
         if (ui->admin_button->isChecked()){
             adminView *V = new adminView(this);
             V->isAdmin = true;
@@ -37,9 +38,7 @@ void registration::on_pushButton_clicked()
             V->show();
         }
         else{
-            user* us = new user();
-            this->hide();
-            us->show();
+            //Go to user
         }
     }
     else{

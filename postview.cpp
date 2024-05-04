@@ -30,6 +30,28 @@ void PostView::on_pushButton_clicked()
     QDate Date = ui->dateEdit->date();
 
     p->setInfo(title,Description,Date,rating,Category);
+
+    for (int i = 0 ; i < Post::all_posts.size() ; i++){
+        qDebug()<<Post::all_posts[i]->date;
+    }
+    QString text=ui->textEdit_keywords->toPlainText();
+    QTextStream stream(&text , QIODevice::ReadOnly);
+    QString word;
+    while(!stream.atEnd())
+    {
+        stream>>word;
+        p->keywords.push_back(word);
+
+    }
+    for (int i = 0 ; i < p->keywords.size() ; i++){
+        qDebug()<<p->keywords[i];
+    }
+
+    // Update UI with edited post information
+    //title->setText(p->title);
+    adminView* ad = new adminView();
+    close();
+    ad->show();
     emit postPublished(p);
     this->hide();
 

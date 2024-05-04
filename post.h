@@ -12,6 +12,8 @@
 #include <QLineEdit>
 #include <QTextEdit>
 #include <QPushButton>
+#include <vector>
+using namespace std;
 
 
 
@@ -20,7 +22,13 @@ class Post : public QWidget
     Q_OBJECT
 
 public:
+    friend bool comp (Post* l, Post* r){
+        return l->date<r->date;
+    }
+
     static int count;
+    static vector<Post*> all_posts;
+    vector<QString> keywords;
     QString title;
     QString description;
     QDate date;
@@ -33,7 +41,6 @@ public:
     Post();
     ~Post();
     void setInfo(QString t, QString d, QDate indate, int r, QString categ);
-    QString getcateg();
 
 public slots:
     void deletePost();

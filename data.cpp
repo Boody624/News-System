@@ -1,2 +1,2 @@
 #include "data.h"
-map<QString, std::pair<QString, bool>> usernames={};
+map<QString, std::tuple<QString, bool, interests>> usernames={};
