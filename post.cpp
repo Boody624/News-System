@@ -1,8 +1,11 @@
 #include "post.h"
 #include "editpost.h"
-#include "user.h"
+#include "QtAlgorithms"
+#include <qDebug>
 
 int Post::count = 0;
+vector<Post*> Post::all_posts={};
+
 
 Post::Post() : QWidget()
 {
@@ -19,10 +22,14 @@ Post::Post() : QWidget()
     setLayout(layout);
 
     count++;
+    all_posts.push_back(this);
+    //sort(all_posts.begin(), all_posts.end());
+
 }
 
 Post::~Post()
 {
+
     delete layout;
 }
 
@@ -47,10 +54,6 @@ void Post::deletePost()
     } else {
         // Do nothing, user canceled deletion
     }
-}
-QString Post::getcateg()
-{
-    return category;
 }
 
 void Post::editPost()
@@ -86,4 +89,9 @@ void Post::editPost()
         // For example:
         // emit editSignal(); // Emit a signal to notify parent to edit this post
     }
+
+
 }
+
+//Add after meeting:
+

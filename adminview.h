@@ -24,6 +24,8 @@ public slots:
     void addPost(Post *p);
     void on_pushButton_clicked();
     //void updatePost(QString title, QString description);
+private slots:
+    void on_title_search_button_clicked();
 };
 
 #endif // ADMINVIEW_H
