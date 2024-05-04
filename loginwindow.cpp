@@ -3,7 +3,6 @@
 #include "data.h"
 #include "registration.h"
 #include "adminview.h"
-#include "user.h"
 using namespace std;
 loginWindow::loginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,11 +35,11 @@ void loginWindow::on_login_button_clicked()
             this->hide();
             qDebug()<<"admin";
             V->show();
+
+
         }
         else{
-            user* us = new user();
-            this->hide();
-            us->show();
+            //Go to user
         }
     }
     else{

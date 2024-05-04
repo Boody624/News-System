@@ -1,6 +1,6 @@
 #include "post.h"
 #include "editpost.h"
-#include "user.h"
+
 
 int Post::count = 0;
 
@@ -47,10 +47,6 @@ void Post::deletePost()
     } else {
         // Do nothing, user canceled deletion
     }
-}
-QString Post::getcateg()
-{
-    return category;
 }
 
 void Post::editPost()
